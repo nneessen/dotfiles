@@ -1,43 +1,28 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
+vim.cmd("let g:netrw_liststyle = 3")
 
--- Set tab width to 2 spaces (standard for React/TypeScript projects)
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+local opt = vim.opt
 
--- Enable relative line numbers for easier code navigation
-vim.opt.relativenumber = true
-
--- Increase scrolloff to provide more context when scrolling
-vim.opt.scrolloff = 8
-
--- Enable clipboard integration for easier copy/paste
-vim.opt.clipboard = "unnamedplus"
-
--- Enable word wrapping for markdown and text files only
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "markdown", "text" },
-  callback = function()
-    vim.opt_local.wrap = true
-  end,
-})
-
--- Highlight matching brackets/tags
-vim.opt.showmatch = true
-
--- Enable mouse support for all modes
-vim.opt.mouse = "a"
-
--- Faster update time for better LSP experience (default is 4000ms)
-vim.opt.updatetime = 300
-
--- Show sign column for git signs and LSP diagnostics
-vim.opt.signcolumn = "yes"
-
--- Search settings: incremental, case-smart, highlight
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
+opt.relativenumber = true
+opt.number = true
+opt.expandtab = true
+opt.autoindent = true
+opt.wrap = false
+opt.ignorecase = true
+opt.smartcase = true
+opt.cursorline = true
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
+opt.backspace = "indent,eol,start"
+opt.clipboard:append("unnamedplus")
+opt.splitright = true
+opt.splitbelow = true
+opt.swapfile = false
+opt.hidden = true
+opt.scrolloff = 8
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.timeoutlen = 400
+opt.updatetime = 250
+opt.completeopt = "menu,menuone,noselect"
